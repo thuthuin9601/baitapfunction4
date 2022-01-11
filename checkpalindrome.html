@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+    let b='';
+    let flag='';
+    function checkpalindrome(text){
+        if(text.length>1){
+            if(text[0]==text[text.length-1]){
+                b=text.slice(1);
+                b=b.slice(0,-1);
+                flag=true;  
+                checkpalindrome(b);     
+            }
+            if(text[0]!==text[text.length-1]){
+               b=text
+                flag=false;
+            }
+        }
+        return flag;
+    }
+    let word=String(prompt('insert word'));
+    alert(checkpalindrome(word))
+
+    if(checkpalindrome(word)==true){
+            alert(true);
+        }
+        if(checkpalindrome(word)==false){
+            alert(false);
+        }   
+</script>
